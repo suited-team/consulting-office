@@ -43,6 +43,7 @@ class Login extends Component {
     } else if (this.state.view ==="Login" ) {
       return (
         <div>
+        
       <NavbarComp />
       </div>
       )
