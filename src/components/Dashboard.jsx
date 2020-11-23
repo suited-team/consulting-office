@@ -19,7 +19,7 @@ render() {
       Tasks
     </Form.Label>
     <Col sm={10}>
-      <Form.Control type="email" placeholder="Email" />
+      <Form.Control type="email" placeholder="Tasks" />
     </Col>
   </Form.Group>
 
@@ -28,7 +28,7 @@ render() {
       Clients
     </Form.Label>
     <Col sm={10}>
-      <Form.Control type="password" placeholder="Password" />
+      <Form.Control type="password" placeholder="Client Name" />
     </Col>
   </Form.Group>
   <fieldset>
