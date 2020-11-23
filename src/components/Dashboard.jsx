@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import NavbarComp from "./NavbarComp.jsx";
+
  import {
     BrowserRouter as Router,
      Switch,

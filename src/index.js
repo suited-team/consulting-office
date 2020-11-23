@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/Login";
+import App from "./components/App";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom';
 
 
 
 ReactDOM.render(
-    <App />,
+    <App /> ,
     document.getElementById("root"));

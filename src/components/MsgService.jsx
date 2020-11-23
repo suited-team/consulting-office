@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import NavbarComp from "./NavbarComp.jsx";
+
 
 class MsgService extends Component {
   render() {
