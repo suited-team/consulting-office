@@ -1,5 +1,7 @@
 import React from 'react';
 import NavbarComp from "./NavbarComp.jsx";
+import './Dashboard.css';
+
 
  import {
     BrowserRouter as Router,

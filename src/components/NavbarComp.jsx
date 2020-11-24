@@ -4,6 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import MsgService from './MsgService.jsx';
 import Dashboard from'./Dashboard.jsx'
+import './NavbarComp.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../style/links.css';
+
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -19,14 +24,16 @@ class NavbarComp extends React.Component {
 
       <div>
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+<Navbar.Brand href="#home">IRADA CONSULTING</Navbar.Brand>
+
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
 
 
-    <Link to="/Dashboard">Dashboard</Link>
-      <Link to="/MsgService">MsgService</Link>
-
+    <Link className="links" to="/Dashboard">Dashboard</Link>
+   <Link className="links" to="/MsgService">MsgService</Link>
+ 
      
     </Nav>
     <Nav>
