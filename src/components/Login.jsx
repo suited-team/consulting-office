@@ -25,9 +25,10 @@ class Login extends Component {
     if (this.state.view === "main") {
       return (
         
-        
+      
 
 <div className="container">
+  <br></br><br></br><br></br><br></br>
   <div className="d-flex justify-content-center h-100">
     <div className="card">
       <div className="card-header">
@@ -46,18 +47,20 @@ class Login extends Component {
           <div className="input-group-prepend">
               <span className="input-group-text"><i class="fas fa-user"></i></span>
           </div>
-             <input type="text" className="form-control" type="password" placeholder="Password" onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password} placeholder="username"/>
+             <input className="form-control" type="text"  onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password} placeholder="username"/>
           
            </div>
+
+
           <div className="input-group form-group">
             <div className="input-group-prepend">
               <span className="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-              <input type="password" className="form-control"  input className ="input" type="password" placeholder="Password" onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password} placeholder="password"/>
+              <input type="password" className="form-control" onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password} placeholder="password"/>
           </div>
 
           <div className="form-group">
-            <input type="submit" onClick={this.props.changeView} value="Login" className="btn float-right login_btn"/>
+            <input type="submit" value="Login" className="btn float-right login_btn" onClick={this.props.changeView} />
           </div>
 
       </form>
