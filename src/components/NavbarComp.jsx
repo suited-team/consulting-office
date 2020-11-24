@@ -1,59 +1,51 @@
-import React from 'react'
+import React from "react";
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
+import MsgService from './MsgService.jsx';
+import Dashboard from'./Dashboard.jsx'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    useParams
-  } from "react-router-dom";
-  import {LinkContainer} from "react-router-bootstrap";
-  import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
-  import Home from './Home.jsx';
-  import About from './MsgService.jsx';
-  import Shop from './Dashboard.jsx';
-
-  import 'bootstrap/dist/css/bootstrap.min.css';
+    Link
+} from 'react-router-dom';
 
 
-class NavbarComp extends React.Component{
+class NavbarComp extends React.Component {
+  render() {
+    return (
+      <Router>
 
-    render(){
-        return(
-            <div>
-                <div className="row">
-                    <div className="col-md-12">
-                        {/* <Router> */}
-                            <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-                                {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                                <Navbar.Collapse id="basic-navbar-nav"> */}
-                                    <Nav className="mr-auto">
-                                    <Nav.Link href="/">Home</Nav.Link>
-                                    <LinkContainer to="/Shop.jsx"><Nav.Link>Shop</Nav.Link></LinkContainer>
+      <div>
+<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="mr-auto">
 
-{/*                                     <Nav.Link href="/shop">Shop</Nav.Link>
-                                    <Route exact path="./Shop.jsx" component={Shop} />
- */}                                    <Nav.Link href="./About.jsx">About Us</Nav.Link>
-                                   
-                                    </Nav>                                   
-                                {/* </Navbar.Collapse> */}
-                            </Navbar>
-                            <br />
-                           {/*  <Switch>
-                                <Route exact path="/">
-                                    <Home />
-                                </Route>
-                                <Route path="./About.jsx">
-                                    <About />
-                                </Route>
-                                <Route path="/shop">
-                                    <Shop />
-                                </Route>
-                            </Switch> */}
-                        <Routes />
-                    </div>
-                </div>
-            </div>
-        )  
-    }
+
+    <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
+      <Nav.Link href="/MsgService">MsgService</Nav.Link>
+
+     
+    </Nav>
+    <Nav>
+      <Nav.Link href="#deets">More deets</Nav.Link>
+      
+    </Nav>
+  </Navbar.Collapse>
+ 
+
+</Navbar>
+</div>
+<Switch>
+    <Route exact path="/Dashboard" component={Dashboard} />
+    <Route exact path="/MsgService" component={MsgService} />
+  </Switch>
+
+</Router>
+
+    );
+  }
 }
-
 export default NavbarComp;
