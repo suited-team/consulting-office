@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavbarComp from "./NavbarComp.jsx";
 
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,6 @@ class Login extends Component {
       password: "",
       view : "main",
     }
-    this.changeView = this.changeView.bind(this);
   }
 
   handleChange(e) {
@@ -17,9 +17,7 @@ class Login extends Component {
       [e.target.id]: e.target.value,
     });
   }
-  changeView(e) {
-    this.setState({ view: e.target.value });
-  }
+  
   
   render() {
     if (this.state.view === "main") {
@@ -34,7 +32,7 @@ class Login extends Component {
              <input type="password" placeholder="Password" onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password}/><br></br> <br></br>
 
              
-             <input type="button" value="Login" onClick={this.changeView} /><br></br> <br></br>
+             <input type="button" value="Login" onClick={this.props.changeView} /><br></br> <br></br>
              
            </form>
           </center>
@@ -43,6 +41,7 @@ class Login extends Component {
     } else if (this.state.view ==="Login" ) {
       return (
         <div>
+        
       <NavbarComp />
       </div>
       )
