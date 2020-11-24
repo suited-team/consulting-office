@@ -24,8 +24,8 @@ class NavbarComp extends React.Component {
     <Nav className="mr-auto">
 
 
-    <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
-      <Nav.Link href="/MsgService">MsgService</Nav.Link>
+    <Link to="/Dashboard">Dashboard</Link>
+      <Link to="/MsgService">MsgService</Link>
 
      
     </Nav>
