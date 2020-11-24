@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavbarComp from "./NavbarComp.jsx";
+import NavbarComp from "../NavbarComp.jsx";
 import './Login.css';
 
 
@@ -24,26 +24,19 @@ class Login extends Component {
   render() {
     if (this.state.view === "main") {
       return (
-        
         <div>
           <center>
-            <div className ="login-wrap">
-              <div className = "login-html">
             <br></br> <br></br>
-           <form id="form" className ="login-form">
-
+           <form id="form">
            <h1>Hello Dear Employee </h1>
+           <input type="text" placeholder="email" onChange={(e)=>this.setState({email:e.target.value})} value={this.state.email}/><br></br> <br></br>
 
+             <input type="password" placeholder="Password" onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password}/><br></br> <br></br>
 
-          <input className ="input" type="text" placeholder="email" onChange={(e)=>this.setState({email:e.target.value})} value={this.state.email}/><br></br> <br></br>
-
-          <input className ="input" type="password" placeholder="Password" onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password}/><br></br> <br></br>
-
-          <input type="button" value="Login" onClick={this.props.changeView} /><br></br> <br></br>
+             
+             <input type="button" value="Login" onClick={this.props.changeView} /><br></br> <br></br>
              
            </form>
-           </div>
-           </div>
           </center>
         </div>
       )
