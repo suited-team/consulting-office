@@ -8,6 +8,8 @@ import './NavbarComp.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/links.css';
 import Login from'./Login.jsx';
+import Logout from'./Logout.jsx';
+
 
 
 
@@ -15,7 +17,9 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    Redirect,
+    PrivateRoute,
 } from 'react-router-dom';
 
 
@@ -35,14 +39,14 @@ class NavbarComp extends React.Component {
 
     <Link className="links" to="/Dashboard">Dashboard</Link>
    <Link className="links" to="/MsgService">MsgService</Link>
-
-     
     </Nav>
+
+
     <Nav>
-    <Link className="links" to="/Login">Logout</Link>
-
-      
-    </Nav>
+    {/* <PrivateRoute path="/Logout" component={Logout}/> */}
+    <Link className="OK" to="/Logout">Logout</Link> 
+     </Nav>
+    
   </Navbar.Collapse>
  
 
@@ -51,9 +55,9 @@ class NavbarComp extends React.Component {
 <Switch>
     <Route exact path="/Dashboard" component={Dashboard} />
     <Route exact path="/MsgService" component={MsgService} />
-    <Route exact path="/Login" component={Login} />
+    <Route exact path="/Logout" component={Logout} />
 
-  </Switch>
+</Switch>
 
 </Router>
 

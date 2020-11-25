@@ -23,7 +23,7 @@ render() {
       Tasks
     </Form.Label>
     <Col sm={10}>
-      <Form.Control type="email" placeholder="Tasks" />
+      <Form.Control type="text" placeholder="Tasks" />
     </Col>
   </Form.Group>
 
@@ -32,7 +32,7 @@ render() {
       Clients
     </Form.Label>
     <Col sm={10}>
-      <Form.Control type="password" placeholder="Client Name" />
+      <Form.Control type="text" placeholder="Client Name" />
     </Col>
   </Form.Group>
   <fieldset>
