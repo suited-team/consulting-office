@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import NavbarComp from "./NavbarComp.jsx";
-import './Login.css';
+import './Logout.css';
 
 
 
-class Login extends Component {
+class Logout extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -77,7 +77,7 @@ class Login extends Component {
       return (
         <div>
         
-      <NavbarComp />
+      <Logout />
       </div>
       )
     }
@@ -86,4 +86,4 @@ class Login extends Component {
     
   
 
-export default Login;
+export default Logout;
