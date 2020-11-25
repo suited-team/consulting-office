@@ -18,29 +18,32 @@ render() {
   return (
     <div>        
 <Form>
+  <div className="tasksclass">
   <Form.Group as={Row} controlId="formHorizontalEmail">
-    <Form.Label column sm={2}>
+    <Form.Label className="label" column sm={2}>
       Tasks
     </Form.Label>
-    <Col sm={10}>
+    <Col sm={4}>
       <Form.Control type="text" placeholder="Tasks" />
     </Col>
   </Form.Group>
-
+  </div>
+  <div className ="clientsclass">
   <Form.Group as={Row} controlId="formHorizontalPassword">
-    <Form.Label column sm={2}>
+    <Form.Label className="label"  column sm={2}>
       Clients
     </Form.Label>
-    <Col sm={10}>
+    <Col sm={4}>
       <Form.Control type="text" placeholder="Client Name" />
     </Col>
   </Form.Group>
+  </div>
   <fieldset>
-    <Form.Group as={Row}>
-      <Form.Label as="legend" column sm={2}>
+    <Form.Group as={Row} className='formgroup'>
+      <Form.Label  className="label" as="legend" column sm={2}>
         Status
       </Form.Label>
-      <Col sm={10}>
+      <Col sm={4}>
         <Form.Check
           type="radio"
           label="To Do"

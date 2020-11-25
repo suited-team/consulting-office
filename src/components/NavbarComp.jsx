@@ -42,22 +42,28 @@ class NavbarComp extends React.Component {
     </Nav>
 
 
-    <Nav>
-    {/* <PrivateRoute path="/Logout" component={Logout}/> */}
-    <Link className="OK" to="/Logout">Logout</Link> 
-     </Nav>
     
   </Navbar.Collapse>
- 
+
+  <Nav>
+    {/* <PrivateRoute path="/Logout" component={Logout}/> */}
+    <Link className="OK" onClick={()=>window.location.reload()}>Logout</Link> 
+  </Nav>
+
 
 </Navbar>
+
 </div>
 <Switch>
     <Route exact path="/Dashboard" component={Dashboard} />
     <Route exact path="/MsgService" component={MsgService} />
-    <Route exact path="/Logout" component={Logout} />
 
 </Switch>
+<Switch>
+
+<Route exact path="/Logout" component={Logout} />
+</Switch>
+
 
 </Router>
 
