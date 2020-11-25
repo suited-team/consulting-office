@@ -48,6 +48,7 @@ class NavbarComp extends React.Component {
   <Nav>
     {/* <PrivateRoute path="/Logout" component={Logout}/> */}
     <Link className="OK" onClick={()=>window.location.reload()}>Logout</Link> 
+{/* need for readjustment */}
   </Nav>
 
 
