@@ -16,9 +16,9 @@ class Dashboard extends React.Component {
 
 render() {
   return (
+
     <div>        
 <Form>
-  <center>
   <div className="tasksclass">
   <Form.Group as={Row} controlId="formHorizontalEmail">
     <Form.Label className="label" column sm={2}>
@@ -29,9 +29,7 @@ render() {
     </Col>
   </Form.Group>
   </div>
-  </center>
 
-  <center>
   <div className ="clientsclass">
   <Form.Group as={Row} controlId="formHorizontalPassword">
     <Form.Label className="label"  column sm={2}>
@@ -42,7 +40,6 @@ render() {
     </Col>
   </Form.Group>
   </div>
-  </center>
   <fieldset>
     <Form.Group as={Row} className='formgroup'>
       <Form.Label  className="label" as="legend" column sm={2}>
@@ -79,7 +76,7 @@ render() {
 
 </Form>
     </div>
-      
+ 
   )
 }
 }
