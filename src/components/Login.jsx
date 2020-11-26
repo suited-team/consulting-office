@@ -33,10 +33,10 @@ class Login extends Component {
     <div className="card">
       <div className="card-header">
        <h3>Sign In</h3>
-        <div class="d-flex justify-content-end social_icon">
-          <span><i class="fab fa-facebook-square"></i></span>
-          <span><i class="fab fa-google-plus-square"></i></span>
-          <span><i class="fab fa-twitter-square"></i></span>
+        <div className="d-flex justify-content-end social_icon">
+          <span><i className="fab fa-facebook-square"></i></span>
+          <span><i className="fab fa-google-plus-square"></i></span>
+          <span><i className="fab fa-twitter-square"></i></span>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ class Login extends Component {
       <form>
         <div className="input-group form-group">
           <div className="input-group-prepend">
-              <span className="input-group-text"><i class="fas fa-user"></i></span>
+              <span className="input-group-text"><i className="fas fa-user"></i></span>
           </div>
              <input className="form-control" type="text"  onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password} placeholder="username"/>
           
@@ -54,7 +54,7 @@ class Login extends Component {
 
           <div className="input-group form-group">
             <div className="input-group-prepend">
-              <span className="input-group-text"><i class="fas fa-key"></i></span>
+              <span className="input-group-text"><i className="fas fa-key"></i></span>
             </div>
               <input type="password" className="form-control" onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password} placeholder="password"/>
           </div>

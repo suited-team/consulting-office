@@ -16,6 +16,7 @@ class Dashboard extends React.Component {
 
 render() {
   return (
+
     <div>        
 <Form>
   <div className="tasksclass">
@@ -28,6 +29,7 @@ render() {
     </Col>
   </Form.Group>
   </div>
+
   <div className ="clientsclass">
   <Form.Group as={Row} controlId="formHorizontalPassword">
     <Form.Label className="label"  column sm={2}>
@@ -71,9 +73,10 @@ render() {
       <Button type="submit">Save Information</Button>
     </Col>
   </Form.Group>
+
 </Form>
     </div>
-      
+ 
   )
 }
 }
