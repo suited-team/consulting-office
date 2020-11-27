@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/links.css';
 import Login from'./Login.jsx';
 import Logout from'./Logout.jsx';
+import Task from  "./Tasks/task.jsx" ;
 
 
 
@@ -39,6 +40,8 @@ class NavbarComp extends React.Component {
 
     <Link className="links" to="/Dashboard">Dashboard</Link>
    <Link className="links" to="/MsgService">MsgService</Link>
+   <Link className="links" to="/Tasks">Tasks</Link>
+
     </Nav>
 
 
@@ -58,6 +61,8 @@ class NavbarComp extends React.Component {
 <Switch>
     <Route exact path="/Dashboard" component={Dashboard} />
     <Route exact path="/MsgService" component={MsgService} />
+    <Route exact path="/tasks" component={Task} />
+
 
 </Switch>
 <Switch>
