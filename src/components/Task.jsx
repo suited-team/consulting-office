@@ -32,7 +32,7 @@ class Task extends Component {
 
     return (
       <div >
-        <div class="table-responsive fix-table-height">
+        <div className="table-responsive fix-table-height">
 
 <Table style={{marginRight:"1000px"}} striped bordered hover variant="dark">
   <thead>
