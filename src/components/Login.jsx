@@ -31,6 +31,8 @@ class Login extends Component {
         console.log(res);
         if (res.data !== "") {
           localStorage.setItem("tokenEmployee", res.data);
+          localStorage.setItem("emailEmployee", this.state.email);
+
           window.location.reload();
         } else {
           alert("check your credential");

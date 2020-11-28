@@ -11,6 +11,10 @@ body {
   color: white !important;
 }
 
+.dropdown-default {
+  float: right !important;
+}
+
 .h4 {
   color: white !important;
 }

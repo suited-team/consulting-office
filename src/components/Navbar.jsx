@@ -13,8 +13,7 @@ import {
   MDBDropdownItem,
   MDBIcon,
 } from "mdbreact";
-import { BrowserRouter as Router } from "react-router-dom";
-
+import axios from "axios";
 class NavbarPage extends Component {
   state = {
     isOpen: false,
@@ -22,6 +21,11 @@ class NavbarPage extends Component {
 
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
+  };
+
+  onLogout = () => {
+    localStorage.clear();
+    window.location.reload();
   };
 
   render() {
@@ -32,14 +36,54 @@ class NavbarPage extends Component {
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={this.toggleCollapse} />
         <MDBNavbarNav left>
-          <MDBNavItem active>
-            <MDBNavLink to="/profile">Profile</MDBNavLink>
-          </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="/tasks">My Tasks</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="/">Logout</MDBNavLink>
+            <MDBNavLink to="/" onClick={this.onLogout}>
+              Logout
+            </MDBNavLink>
+          </MDBNavItem>
+          <MDBNavItem>
+            <MDBDropdown>
+              <MDBDropdownToggle nav caret>
+                <MDBIcon icon="user" />
+              </MDBDropdownToggle>
+              <MDBDropdownMenu className="dropdown-default">
+                <input type="text" placeholder="username" id="username" />
+                <MDBDropdownItem
+                  onClick={() => {
+                    let obj = {
+                      name: document.getElementById("username").value,
+                      email: localStorage.getItem("emailEmployee"),
+                    };
+                    axios
+                      .put("http://localhost:5500/employee/update", obj)
+                      .then((res) => {
+                        console.log(res.data);
+                      });
+                  }}
+                >
+                  Update username
+                </MDBDropdownItem>
+                <input type="password" placeholder="password" id="username" />
+                <MDBDropdownItem
+                  onClick={() => {
+                    let obj = {
+                      password: document.getElementById("password").value,
+                      email: localStorage.getItem("emailEmployee"),
+                    };
+                    axios
+                      .put("http://localhost:5500/employee/update", obj)
+                      .then((res) => {
+                        console.log(res.data);
+                      });
+                  }}
+                >
+                  Update username
+                </MDBDropdownItem>
+              </MDBDropdownMenu>
+            </MDBDropdown>
           </MDBNavItem>
         </MDBNavbarNav>
       </MDBNavbar>
