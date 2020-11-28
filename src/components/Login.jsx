@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import NavbarComp from "./NavbarComp.jsx";
-import './Login.css';
-
-
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
+import axios from "axios";
 
 class Login extends Component {
   constructor(props) {
@@ -10,80 +8,83 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      view : "main",
-    }
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({
-      [e.target.id]: e.target.value,
-    });
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
-  
-  
+
+  onSubmit(event) {
+    // axios.post();
+    console.log(this.state);
+    if (this.state.email === "") {
+      return alert("Please enter a valid email");
+    } else if (this.state.password === "") {
+      return alert("Please enter a valid password");
+    }
+    axios
+      .post("http://localhost:5500/employee/login", this.state)
+      .then((res) => {
+        console.log(res);
+        if (res.data !== "") {
+          localStorage.setItem("tokenEmployee", res.data);
+          window.location.reload();
+        } else {
+          alert("check your credential");
+        }
+      });
+    event.preventDefault();
+  }
+
   render() {
-    if (this.state.view === "main") {
-      return (
-        
-      
-
-<div className="container">
-  <br></br><br></br><br></br><br></br>
-  <div className="d-flex justify-content-center h-100">
-    <div className="card">
-      <div className="card-header">
-       <h3>Sign In</h3>
-        <div className="d-flex justify-content-end social_icon">
-          <span><i className="fab fa-facebook-square"></i></span>
-          <span><i className="fab fa-google-plus-square"></i></span>
-          <span><i className="fab fa-twitter-square"></i></span>
-        </div>
+    return (
+      <div className="login">
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="6">
+              <form>
+                <p className="h4 text-center mb-4">Sign in</p>
+                <div className="blue-text">
+                  <MDBInput
+                    name="email"
+                    className="input"
+                    label="Type your email"
+                    icon="envelope"
+                    group
+                    type="email"
+                    validate
+                    required
+                    error="wrong"
+                    success="right"
+                    onChange={this.onChange}
+                  />
+                  <MDBInput
+                    name="password"
+                    className="input"
+                    label="Type your password"
+                    icon="lock"
+                    group
+                    required
+                    type="password"
+                    validate
+                    onChange={this.onChange}
+                  />
+                </div>
+                <div className="text-center">
+                  <MDBBtn tyoe="Submit" onClick={this.onSubmit}>
+                    Login
+                  </MDBBtn>
+                </div>
+              </form>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
       </div>
-
-
-    <div className="card-body">
-      <form>
-        <div className="input-group form-group">
-          <div className="input-group-prepend">
-              <span className="input-group-text"><i className="fas fa-user"></i></span>
-          </div>
-             <input className="form-control" type="text"  onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password} placeholder="username"/>
-          
-           </div>
-
-
-          <div className="input-group form-group">
-            <div className="input-group-prepend">
-              <span className="input-group-text"><i className="fas fa-key"></i></span>
-            </div>
-              <input type="password" className="form-control" onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password} placeholder="password"/>
-          </div>
-
-          <div className="form-group">
-            <input type="submit" value="Login" className="btn float-right login_btn" onClick={this.props.changeView} />
-          </div>
-
-      </form>
-      </div>
-
-
-
-    
-  </div>
-</div>
-</div>
-)
-    } else if (this.state.view ==="Login" ) {
-      return (
-        <div>
-        
-      <NavbarComp />
-      </div>
-      )
-    }
+    );
   }
 }
-    
-  
 
 export default Login;
