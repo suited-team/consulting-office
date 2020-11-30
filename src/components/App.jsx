@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div>
         <div>
-        
+        {localStorage.getItem("tokenEmployee") !== null ? (
             <Router>
               <div>
                 <NavbarPage />
@@ -23,8 +23,13 @@ class App extends Component {
                   <Route path="/tasks" exact component={Task}></Route>
                 </Switch>
               </div>
+            </Router>):(
+            <Router>
+              <Switch>
+                <Route path="/" exact exact component={Login} />
+              </Switch>
             </Router>
-         
+            )}
         </div>
       </div>
     );
@@ -36,11 +41,7 @@ export default App;
 
 
 /**
- *   {localStorage.getItem("tokenEmployee") !== null ? (
+ *   
  *  : (
-            <Router>
-              <Switch>
-                <Route path="/" exact exact component={Login} />
-              </Switch>
-            </Router>
+            
  */

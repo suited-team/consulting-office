@@ -34,7 +34,7 @@ class Task extends Component {
       <div >
         <div className="table-responsive fix-table-height">
 
-<Table style={{marginRight:"1000px"}} striped bordered hover variant="dark">
+<Table style={{marginRight:"1000px",marginTop:'100px'}} striped bordered hover variant="dark">
   <thead>
     <tr>
       <th>#</th>
@@ -46,8 +46,8 @@ class Task extends Component {
   <tbody>
     <tr>
       <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
+      <td></td>
+      <td></td>
       <td><Dropdown>
   <Dropdown.Toggle variant="success" id="dropdown-basic">
     Status
@@ -63,8 +63,8 @@ class Task extends Component {
     </tr>
     <tr>
       <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
+      <td></td>
+      <td></td>
       <td><Dropdown>
   <Dropdown.Toggle variant="success" id="dropdown-basic">
     Status
@@ -80,8 +80,10 @@ class Task extends Component {
     </tr>
     <tr>
       <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-      <td><Dropdown>
+      <td ></td>
+      <td ></td>
+      <td>
+        <Dropdown>
   <Dropdown.Toggle variant="success" id="dropdown-basic">
     Status
   </Dropdown.Toggle>
