@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Table from 'react-bootstrap/Table';
-import Dropdown from 'react-bootstrap/DropDown';
 
 
 
@@ -11,7 +9,7 @@ class Tasks extends Component {
 
 return(
     <div>
-<Table striped bordered hover variant="dark">
+{/* <Table striped bordered hover variant="dark">
   <thead>
     <tr>
       <th>#</th>
@@ -72,7 +70,7 @@ return(
 </td>
     </tr>
   </tbody>
-</Table>
+</Table> */}
 </div>
 )
 }
