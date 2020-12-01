@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import TaskM from "./Tasks";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Table from 'react-bootstrap/Table';
-import Dropdown from 'react-bootstrap/DropDown';
-import './Task.css';
-
-
-
 
 class Task extends Component {
   constructor(props) {
@@ -31,74 +24,34 @@ class Task extends Component {
     console.log(this.state.data);
 
     return (
-      <div >
-        <div className="table-responsive fix-table-height">
+      <div className="container">
+        <table class="table table-sm table-dark">
+          <thead>
+            <tr>
+              <th className="bg-info" scope="col">
+                In progress
+              </th>
+              <th className="bg-danger" scope="col">
+                On hold
+              </th>
+              <th className="bg-warning" scope="col">
+                In progress
+              </th>
+              <th className="bg-success" scope="col">
+                Done
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="bg-info">IP</td>
+              <td className="bg-danger">OH</td>
+              <td className="bg-warning">IP</td>
+              <td className="bg-success">done</td>
+            </tr>
+          </tbody>
+        </table>
 
-<Table style={{marginRight:"1000px",marginTop:'100px'}} striped bordered hover variant="dark">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Description of the Task</th>
-      <th>Client</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td></td>
-      <td></td>
-      <td><Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Status
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">In Progress</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">On Hold</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Complete</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td></td>
-      <td></td>
-      <td><Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Status
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">In Progress</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">On Hold</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Complete</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td ></td>
-      <td ></td>
-      <td>
-        <Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Status
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">In Progress</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">On Hold</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Complete</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-</td>
-    </tr>
-  </tbody>
-</Table>
-</div>
         {this.state.data.map((element, index) => {
           return element.status === "fase 1" ? (
             <div className="phase1">
