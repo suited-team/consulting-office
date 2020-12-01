@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import NavbarPage from "./Navbar.jsx";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Login.jsx";
 import Profile from "./Profile.jsx";
 import Task from "./Task.jsx";
 
 class App extends Component {
-  constructor(props) {
+  /* constructor(props) {
     super(props);
-  }
+  } */
 
   render() {
     return (
@@ -26,7 +26,7 @@ class App extends Component {
             </Router>):(
             <Router>
               <Switch>
-                <Route path="/" exact exact component={Login} />
+                <Route path="/" exact  component={Login} />
               </Switch>
             </Router>
             )}
