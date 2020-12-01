@@ -6,9 +6,9 @@ import Profile from "./Profile.jsx";
 import Task from "./Task.jsx";
 
 class App extends Component {
-  constructor(props) {
+  /* constructor(props) {
     super(props);
-  }
+  } */
 
   render() {
     return (
