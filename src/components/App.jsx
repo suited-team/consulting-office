@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavbarPage from "./Navbar.jsx";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Login.jsx";
 import Profile from "./Profile.jsx";
 import Task from "./Task.jsx";
