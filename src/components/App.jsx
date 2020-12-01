@@ -26,7 +26,7 @@ class App extends Component {
             </Router>):(
             <Router>
               <Switch>
-                <Route path="/" exact exact component={Login} />
+                <Route path="/" exact  component={Login} />
               </Switch>
             </Router>
             )}
