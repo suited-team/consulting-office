@@ -6,7 +6,7 @@ import {
   MDBNavItem,
   MDBNavLink,
   MDBNavbarToggler,
-  MDBCollapse,
+
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
@@ -47,7 +47,8 @@ class NavbarPage extends Component {
           <MDBNavItem>
             <MDBDropdown>
               <MDBDropdownToggle nav caret>
-                <MDBIcon icon="user" />
+                <MDBIcon icon="user" />&nbsp;
+                Edit profile
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
                 <input type="text" placeholder="username" id="username" />
@@ -58,7 +59,7 @@ class NavbarPage extends Component {
                       email: localStorage.getItem("emailEmployee"),
                     };
                     axios
-                      .put("http://localhost:5500/employee/update", obj)
+                      .put("https://server-cunsulting.herokuapp.com/employee/update", obj)
                       .then((res) => {
                         console.log(res.data);
                       });
@@ -74,7 +75,7 @@ class NavbarPage extends Component {
                       email: localStorage.getItem("emailEmployee"),
                     };
                     axios
-                      .put("http://localhost:5500/employee/update", obj)
+                      .put("https://server-cunsulting.herokuapp.com/employee/update", obj)
                       .then((res) => {
                         console.log(res.data);
                       });
