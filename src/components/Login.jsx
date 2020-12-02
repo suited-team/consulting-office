@@ -26,7 +26,7 @@ class Login extends Component {
       return alert("Please enter a valid password");
     }
     axios
-      .post("http://localhost:5500/employee/login", this.state)
+      .post("https://server-cunsulting.herokuapp.com/employee/login", this.state)
       .then((res) => {
         console.log(res);
         if (res.data !== "") {
