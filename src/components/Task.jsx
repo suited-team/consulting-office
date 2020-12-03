@@ -1,19 +1,38 @@
 import React, { Component } from "react";
 import axios from "axios";
-import TaskM from "./Tasks";
-
+import "../components/Task.css";
+import Table from "react-bootstrap/Table";
+import { Dropdown } from "react-bootstrap";
 class Task extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
     };
+    this.check = this.check.bind(this);
+  }
+
+  phase(data) {
+    if (data === "fase 1") {
+      return "in progress";
+    } else if (data === "fase 2") {
+      return "on Hold";
+    } else if (data === "fase 3") {
+      return "almost";
+    } else {
+      return "Complete";
+    }
   }
 
   check() {
-    axios.get("http://localhost:5500/task").then((response) => {
+    let obj = {
+      email: localStorage.getItem("emailEmployee"),
+    };
+    console.log(obj.email);
+    axios.post(`http://localhost:5500/task/Employee`, obj).then((response) => {
       //need to change the link
       if (response.data.length > this.state.data.length) {
+        console.log(response.data);
         this.setState({ data: response.data });
       }
     });
@@ -24,53 +43,67 @@ class Task extends Component {
     console.log(this.state.data);
 
     return (
-      <div className="container">
-        <table class="table table-sm table-dark">
+      <div style={{ marginTop: "100px", marginLeft: "200px" }}>
+        <Table
+          style={{ width: "1000px", fontSize: "20px" }}
+          striped
+          bordered
+          hover
+          variant="dark"
+        >
           <thead>
             <tr>
-              <th className="bg-info" scope="col">
-                In progress
-              </th>
-              <th className="bg-danger" scope="col">
-                On hold
-              </th>
-              <th className="bg-warning" scope="col">
-                In progress
-              </th>
-              <th className="bg-success" scope="col">
-                Done
-              </th>
+              <th>ID</th>
+              <th>Client name</th>
+              <th>Employee name</th>
+              <th>Creation date</th>
+              <th>Due date</th>
+              <th>status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="bg-info">IP</td>
-              <td className="bg-danger">OH</td>
-              <td className="bg-warning">IP</td>
-              <td className="bg-success">done</td>
-            </tr>
+            {this.state.data.map((t, i) => (
+              <tr>
+                <td>{i + 1}</td>
+                <td>{t.ClientName}</td>
+                <td>{t.EmployeeName}</td>
+                <td>{t.startDate}</td>
+                <td>{t.DueDate}</td>
+                <td>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      variant="success"
+                      id="dropdown-basic"
+                    ></Dropdown.Toggle>
+                    {this.phase(t.status)}
+                    <Dropdown.Menu>
+                      <Dropdown.Item
+                        style={{ backgroundColor: "#387DF8", color: "white" }}
+                      >
+                        In progress
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        style={{ backgroundColor: "red", color: "white" }}
+                      >
+                        On hold
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        style={{ backgroundColor: "orange", color: "white" }}
+                      >
+                        almost
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        style={{ backgroundColor: "green", color: "white" }}
+                      >
+                        Done
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </td>
+              </tr>
+            ))}
           </tbody>
-        </table>
-
-        {this.state.data.map((element, index) => {
-          return element.status === "fase 1" ? (
-            <div className="phase1">
-              <TaskM task={element} key={index} />
-            </div>
-          ) : element.status === "fase 2" ? (
-            <div className="phase2">
-              <TaskM task={element} key={index} />
-            </div>
-          ) : element.status === "fase 3" ? (
-            <div className="phase3">
-              <TaskM task={element} key={index} />{" "}
-            </div>
-          ) : (
-            <div className="phase4">
-              <TaskM task={element} key={index} />{" "}
-            </div>
-          );
-        })}
+        </Table>
       </div>
     );
   }
