@@ -17,16 +17,13 @@ class NavbarPage extends Component {
   state = {
     isOpen: false,
   };
-
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
-
   onLogout = () => {
     localStorage.clear();
     window.location.reload();
   };
-
   render() {
     return (
       <MDBNavbar color="default-color" dark expand="md">
@@ -37,6 +34,9 @@ class NavbarPage extends Component {
         <MDBNavbarNav left>
           <MDBNavItem>
             <MDBNavLink to="/">My Tasks</MDBNavLink>
+          </MDBNavItem>
+          <MDBNavItem>
+            <MDBNavLink to="/Contact">Contact Clients</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="/" onClick={this.onLogout}>
@@ -50,25 +50,6 @@ class NavbarPage extends Component {
                 &nbsp; Edit profile
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
-                <input type="text" placeholder="username" id="username" />
-                <MDBDropdownItem
-                  onClick={() => {
-                    let obj = {
-                      name: document.getElementById("username").value,
-                      email: localStorage.getItem("emailEmployee"),
-                    };
-                    axios
-                      .put(
-                        "https://server-cunsulting.herokuapp.com/employee/update",
-                        obj
-                      )
-                      .then((res) => {
-                        console.log(res.data);
-                      });
-                  }}
-                >
-                  Update username
-                </MDBDropdownItem>
                 <input type="password" placeholder="password" id="username" />
                 <MDBDropdownItem
                   onClick={() => {

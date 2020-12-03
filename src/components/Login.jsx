@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 import axios from "axios";
+import Swal from 'sweetalert2'
 
 class Login extends Component {
   constructor(props) {
@@ -21,9 +22,19 @@ class Login extends Component {
     // axios.post();
     console.log(this.state);
     if (this.state.email === "") {
-      return alert("Please enter a valid email");
+      return Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please enter a valid email!',
+        footer: '<a href>Why do I have this issue?</a>'
+      }) 
     } else if (this.state.password === "") {
-      return alert("Please enter a valid password");
+      return Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please enter a valid password!',
+        footer: '<a href>Why do I have this issue?</a>'
+      }) 
     }
     axios
       .post("https://server-cunsulting.herokuapp.com/employee/login", this.state)
@@ -35,7 +46,12 @@ class Login extends Component {
 
           window.location.reload();
         } else {
-          alert("check your credential");
+          return Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Email or Password are incorrect!',
+            footer: '<a href>Why do I have this issue?</a>'
+          }) 
         }
       });
     event.preventDefault();

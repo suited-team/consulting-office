@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./Login.jsx";
 import Profile from "./Profile.jsx";
 import Task from "./Task.jsx";
+import Contact from "./Contact Client.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class App extends Component {
                 <Switch>
                   <Route path="/profile" exact component={Profile}></Route>
                   <Route path="/" exact component={Task}></Route>
+                  <Route path="/Contact" exact component={Contact}></Route>
                 </Switch>
               </div>
             </Router>
