@@ -27,6 +27,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "start:dev": "react-scripts start",
     "start": "cd server && npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",

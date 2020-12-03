@@ -6,7 +6,6 @@ import {
   MDBNavItem,
   MDBNavLink,
   MDBNavbarToggler,
-
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
@@ -37,7 +36,7 @@ class NavbarPage extends Component {
         <MDBNavbarToggler onClick={this.toggleCollapse} />
         <MDBNavbarNav left>
           <MDBNavItem>
-            <MDBNavLink to="/tasks">My Tasks</MDBNavLink>
+            <MDBNavLink to="/">My Tasks</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="/" onClick={this.onLogout}>
@@ -47,8 +46,8 @@ class NavbarPage extends Component {
           <MDBNavItem>
             <MDBDropdown>
               <MDBDropdownToggle nav caret>
-                <MDBIcon icon="user" />&nbsp;
-                Edit profile
+                <MDBIcon icon="user" />
+                &nbsp; Edit profile
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
                 <input type="text" placeholder="username" id="username" />
@@ -59,7 +58,10 @@ class NavbarPage extends Component {
                       email: localStorage.getItem("emailEmployee"),
                     };
                     axios
-                      .put("https://server-cunsulting.herokuapp.com/employee/update", obj)
+                      .put(
+                        "https://server-cunsulting.herokuapp.com/employee/update",
+                        obj
+                      )
                       .then((res) => {
                         console.log(res.data);
                       });
@@ -75,7 +77,10 @@ class NavbarPage extends Component {
                       email: localStorage.getItem("emailEmployee"),
                     };
                     axios
-                      .put("https://server-cunsulting.herokuapp.com/employee/update", obj)
+                      .put(
+                        "https://server-cunsulting.herokuapp.com/employee/update",
+                        obj
+                      )
                       .then((res) => {
                         console.log(res.data);
                       });

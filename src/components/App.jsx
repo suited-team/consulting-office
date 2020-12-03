@@ -20,7 +20,7 @@ class App extends Component {
                 <NavbarPage />
                 <Switch>
                   <Route path="/profile" exact component={Profile}></Route>
-                  <Route path="/tasks" exact component={Task}></Route>
+                  <Route path="/" exact component={Task}></Route>
                 </Switch>
               </div>
             </Router>
