@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import NavbarPage from "./Navbar.jsx";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link ,Redirect} from "react-router-dom";
 import Login from "./Login.jsx";
 import Profile from "./Profile.jsx";
 import Task from "./Task.jsx";
-import Contact from "./Contact Client.jsx";
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +20,13 @@ class App extends Component {
                 <Switch>
                   <Route path="/profile" exact component={Profile}></Route>
                   <Route path="/" exact component={Task}></Route>
-                  <Route path="/Contact" exact component={Contact}></Route>
+                  <Route
+                          path="/chat"
+                          exact
+                         component={ Redirect }
+                               
+                          loc="https://irada-messaging.herokuapp.com"
+                          ></Route>
                 </Switch>
               </div>
             </Router>

@@ -8,7 +8,7 @@ body {
 }
 
 .input {
-  color: white !important;
+  color: black !important;
 }
 
 .dropdown-default {
@@ -28,3 +28,14 @@ body {
   top: 30%;
   left: 30%;
 }
+ form{
+  box-sizing: border-box;
+  background-color: #5c5b5b  !important;
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+} 

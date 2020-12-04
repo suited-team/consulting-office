@@ -36,7 +36,14 @@ class NavbarPage extends Component {
             <MDBNavLink to="/">My Tasks</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="/Contact">Contact Clients</MDBNavLink>
+                
+            <MDBNavLink to='/chat' onClick={(e)=>{
+               e.preventDefault();
+               window.location.replace("https://irada-messaging.herokuapp.com")
+              }
+            }> 
+               Chat
+          </MDBNavLink> 
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="/" onClick={this.onLogout}>
