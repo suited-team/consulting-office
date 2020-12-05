@@ -24,18 +24,20 @@ body {
   text-align: center;
 }
 .container {
-  position: fixed; /* or absolute */
-  top: 30%;
-  left: 30%;
+  position: fixed  !important; /* or absolute */
+  top: 30%  !important;
+  left: 30%  !important;
 }
  form{
-  box-sizing: border-box;
-  background-color: #5c5b5b  !important;
-  width: 70%;
+  box-sizing: border-box  !important;
+  width: 100%  !important; 
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
+  border-radius: 4px  !important;
+  resize: vertical  !important;
   padding: 12px 12px 12px 0;
   display: inline-block;
 } 
+.btn-success.dropdown-toggle {
+  background-color: #29d89c !important
+}
+
