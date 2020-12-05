@@ -56,11 +56,11 @@ class Task extends Component {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Client name</th>
-              <th>Employee name</th>
-              <th>Creation date</th>
-              <th>Due date</th>
-              <th>status</th>
+              <th>Client Name</th>
+              <th>Employee Name</th>
+              <th>Creation Date</th>
+              <th>Due Date</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -78,24 +78,24 @@ class Task extends Component {
                       id="dropdown-basic"
                     ></Dropdown.Toggle>
                     {this.phase(t.status)}
-                    <Dropdown.Menu>
+                    <Dropdown.Menu className='dodo'>
                       <Dropdown.Item
-                        style={{ backgroundColor: "#387DF8", color: "white" }}
+                        style={{ backgroundColor: "#99ebff", color: "white" }}
                       >
                         In progress
                       </Dropdown.Item>
                       <Dropdown.Item
-                        style={{ backgroundColor: "red", color: "white" }}
+                        style={{ backgroundColor: "#ff9999", color: "white" }}
                       >
                         On hold
                       </Dropdown.Item>
                       <Dropdown.Item
-                        style={{ backgroundColor: "orange", color: "white" }}
+                        style={{ backgroundColor: "#ffbf80", color: "white" }}
                       >
                         almost
                       </Dropdown.Item>
                       <Dropdown.Item
-                        style={{ backgroundColor: "green", color: "white" }}
+                        style={{ backgroundColor: "#99e699", color: "white" }}
                       >
                         Done
                       </Dropdown.Item>

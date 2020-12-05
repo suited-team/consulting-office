@@ -29,12 +29,12 @@ class NavbarPage extends Component {
       <MDBNavbar color="default-color" dark expand="md">
         <MDBNavbarBrand>
           <strong className="white-text">IRADA Consulting</strong>
-        </MDBNavbarBrand>
+        </MDBNavbarBrand> {" "}
         <MDBNavbarToggler onClick={this.toggleCollapse} />
         <MDBNavbarNav left>
-          <MDBNavItem>
+          <MDBNavItem> {" "}
             <MDBNavLink to="/">My Tasks</MDBNavLink>
-          </MDBNavItem>
+          </MDBNavItem> {" "}
           <MDBNavItem>
                 
             <MDBNavLink to='/chat' onClick={(e)=>{
@@ -43,13 +43,9 @@ class NavbarPage extends Component {
               }
             }> 
                Chat
-          </MDBNavLink> 
+          </MDBNavLink> {" "}
           </MDBNavItem>
-          <MDBNavItem>
-            <MDBNavLink to="/" onClick={this.onLogout}>
-              Logout
-            </MDBNavLink>
-          </MDBNavItem>
+         
           <MDBNavItem>
             <MDBDropdown>
               <MDBDropdownToggle nav caret>
@@ -78,6 +74,12 @@ class NavbarPage extends Component {
                 </MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>
+            
+          </MDBNavItem>
+          <MDBNavItem>
+            <MDBNavLink to="/" onClick={this.onLogout}>
+              Logout
+            </MDBNavLink>
           </MDBNavItem>
         </MDBNavbarNav>
       </MDBNavbar>
